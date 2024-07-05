@@ -4,16 +4,18 @@ import bg from '../../assets/bg.jpg';
 import welcomelogo from '../../assets/logo2.png';
 import {button1} from '../common/button';
 
-const Welcome = () => {
+const Welcome = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Image style={styles.bg} source={bg} />
       <View style={styles.container1}>
-        <Text style={styles.header}>Welcome To</Text>
-
         <Image style={styles.logo} source={welcomelogo} />
-        <Text style={button1}>Login</Text>
-        <Text style={button1}>SignUp</Text>
+        <Text style={button1} onPress={() => navigation.navigate('Login')}>
+          Login
+        </Text>
+        <Text style={button1} onPress={() => navigation.navigate('SignUp')}>
+          SignUp
+        </Text>
       </View>
     </View>
   );
@@ -45,8 +47,10 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   logo: {
-    width: 160,
-    height: 100,
+    height: 120,
+    // width: 180,
+    resizeMode: 'contain',
+    marginBottom: 50,
     // borderRadius: '50%',
   },
 });

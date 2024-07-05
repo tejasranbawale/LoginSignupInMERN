@@ -13,7 +13,7 @@ import {
   link2,
 } from '../common/formcss';
 
-const Login = () => {
+const Login = ({navigation}) => {
   return (
     <>
       <View style={styles.container}>
@@ -27,11 +27,11 @@ const Login = () => {
             <Text style={head2}>Sign in to continue</Text>
             <View style={formGroup}>
               <Text style={label}>Email</Text>
-              <TextInput style={input} />
+              <TextInput style={input} placeholder="Enter Your Email" />
             </View>
             <View style={styles.formGroup}>
               <Text style={label}>Password</Text>
-              <TextInput style={input} />
+              <TextInput style={input} placeholder="Enter Password Carefully" />
             </View>
             <View style={styles.fp}>
               <Text style={link}>Forgot Password</Text>
@@ -39,7 +39,10 @@ const Login = () => {
             <Text style={button1}>Login</Text>
             <Text style={link2}>
               Don't have an Account?
-              <Text style={link}> Create a New Account</Text>{' '}
+              <Text style={link} onPress={() => navigation.navigate('SignUp')}>
+                {' '}
+                Create a New Account
+              </Text>{' '}
             </Text>
           </View>
         </View>
@@ -78,13 +81,13 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height: '50%',
+    height: '40%',
   },
   s2: {
     display: 'flex',
     backgroundColor: '#fff',
     width: '100%',
-    height: '53%',
+    height: '60%',
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     padding: 20,

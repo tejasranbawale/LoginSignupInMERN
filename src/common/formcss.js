@@ -39,6 +39,7 @@ module.exports = {
     fontSize: 15,
     textAlign: 'center',
     marginVertical: 10,
+    
   },
   input1: {
     backgroundColor: '#dcdcdc',
@@ -46,5 +47,6 @@ module.exports = {
     paddingHorizontal: 10,
     paddingVertical: 5,
     height: 100,
+    textAlignVertical: 'top',
   },
 };

@@ -1,4 +1,11 @@
-import {StyleSheet, Text, Image, View, TextInput} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  Image,
+  View,
+  TextInput,
+  ScrollView,
+} from 'react-native';
 import React from 'react';
 import bg from '../../assets/bg.jpg';
 import welcomelogo from '../../assets/logo2.png';
@@ -14,7 +21,7 @@ import {
   link2,
 } from '../common/formcss';
 
-const Signup = () => {
+const Signup = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Image style={styles.bg} source={bg} />
@@ -26,33 +33,37 @@ const Signup = () => {
           <Text style={head1}>Create a New Account</Text>
           <Text style={link2}>
             Already have an Account?
-            <Text style={link}> Login here</Text>{' '}
+            <Text style={link} onPress={() => navigation.navigate('Login')}>
+              {' '}
+              Login here
+            </Text>
           </Text>
-          <View style={formGroup}>
-            <Text style={label}>Name</Text>
-            <TextInput style={input} placeholder="Enter Your Name" />
-          </View>
-          <View style={formGroup}>
-            <Text style={label}>Email</Text>
-            <TextInput style={input} placeholder="Enter Your Email" />
-          </View>
-          <View style={formGroup}>
-            <Text style={label}>DOB</Text>
-            <TextInput style={input} placeholder="Date of Birth" />
-          </View>
-          <View style={formGroup}>
-            <Text style={label}>Password</Text>
-            <TextInput style={input} placeholder="Enter Password" />
-          </View>
-          <View style={formGroup}>
-            <Text style={label}>Confirm Password</Text>
-            <TextInput style={input} placeholder="Confirm Password" />
-          </View>
-          <View style={formGroup}>
-            <Text style={label}>Adderss</Text>
-            <TextInput style={input1} placeholder="Enter Your Address" />
-          </View>
-
+          <ScrollView showsVerticalScrollIndicator={false}>
+            <View style={formGroup}>
+              <Text style={label}>Name</Text>
+              <TextInput style={input} placeholder="Enter Your Name" />
+            </View>
+            <View style={formGroup}>
+              <Text style={label}>Email</Text>
+              <TextInput style={input} placeholder="Enter Your Email" />
+            </View>
+            <View style={formGroup}>
+              <Text style={label}>DOB</Text>
+              <TextInput style={input} placeholder="Date of Birth" />
+            </View>
+            <View style={formGroup}>
+              <Text style={label}>Password</Text>
+              <TextInput style={input} placeholder="Enter Password" />
+            </View>
+            <View style={formGroup}>
+              <Text style={label}>Confirm Password</Text>
+              <TextInput style={input} placeholder="Confirm Password" />
+            </View>
+            <View style={formGroup}>
+              <Text style={label}>Adderss</Text>
+              <TextInput style={input1} placeholder="Enter Your Address" />
+            </View>
+          </ScrollView>
           <Text style={button1}>SignUp</Text>
         </View>
       </View>
